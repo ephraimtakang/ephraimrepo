@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # MySQL database configuration
 db_config = {
-    'host': 'db',
+    'host': 'acme_db',
     'user': 'root',
     'password': 'root',
     'database': 'db_api'

@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # MySQL database configuration
 db_config = {
-    'host': 'fiverr_task_db_1',
+    'host': 'db',
     'user': 'root',
     'password': 'root',
     'database': 'db_api'

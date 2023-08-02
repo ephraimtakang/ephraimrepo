@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  # web:
+  #   build: .
+  #   ports:
+  #     - "5000:5000"
+  #   environment:
+  #     - API_KEY=12345678
+  #   depends_on:
+  #     - db
+  #   networks:
+  #     - my_network
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_HOST=fiverr_task_db_1
+      - MYSQL_DATABASE=db_api
+      - MYSQL_PASSWORD=root
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - my_network
+
+networks:
+  my_network:
+
+volumes:
+  mysql_data:

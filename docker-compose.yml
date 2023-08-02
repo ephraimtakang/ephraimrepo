@@ -16,7 +16,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_HOST=fiverr_task_db_1
+      - MYSQL_HOST=db
       - MYSQL_DATABASE=db_api
       - MYSQL_PASSWORD=root
     volumes:

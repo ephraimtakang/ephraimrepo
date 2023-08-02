@@ -1,22 +1,22 @@
 version: '3.8'
 services:
-  # web:
-  #   build: .
-  #   ports:
-  #     - "5000:5000"
-  #   environment:
-  #     - API_KEY=12345678
-  #   depends_on:
-  #     - db
-  #   networks:
-  #     - my_network
-  db:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - API_KEY=12345678
+    depends_on:
+      - db
+    networks:
+      - my_network
+  acme_db:
     image: mysql:latest
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_HOST=db
+      - MYSQL_HOST=acme_db
       - MYSQL_DATABASE=db_api
       - MYSQL_PASSWORD=root
     volumes:
